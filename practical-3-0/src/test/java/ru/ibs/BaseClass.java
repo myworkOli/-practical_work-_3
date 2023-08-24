@@ -23,11 +23,7 @@ public class BaseClass {
 
         driver.manage().window().maximize();
 
-        driver.get("http://localhost:8080/food");
-
-        TakesScreenshot scrShot =((TakesScreenshot)driver);
-
-        
+        driver.get("http://localhost:8080/food");       
     }
 
     @AfterAll
