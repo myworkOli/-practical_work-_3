@@ -27,16 +27,7 @@ public class BaseClass {
 
         TakesScreenshot scrShot =((TakesScreenshot)driver);
 
-        try {
-            Thread.sleep(1700);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-
-
-
-
+        
     }
 
     @AfterAll
