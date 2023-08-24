@@ -47,7 +47,7 @@ public class Tests extends BaseClass{
 
         addBtn.click();
         /**
-         * Заполнить Форму добавления товара даныыми из CsvSource
+         * Заполнить Форму добавления товара даными из CsvSource
          */
         addName.sendKeys(name);
         addType.selectByVisibleText(type);
@@ -65,7 +65,7 @@ public class Tests extends BaseClass{
          */
         List<WebElement> tablRow = driver.findElements(By.xpath("//*[@class= 'table']/tbody/tr"));
         int n1=tablRow.size();
-        Assertions.assertTrue((n1-n0)==1,"количество строк в таблице не изменилось на 1");
+        Assertions.assertTrue((n1-n0)==1,"Количество строк в таблице не изменилось на 1");
         /**
          * Проверить , что информация в новой строке соответствует тому что мы добавляли
          */
@@ -91,15 +91,15 @@ public class Tests extends BaseClass{
             throw new RuntimeException(e);
         }
         /**
-         * Проверить наличие  форме элементов: полей "Наименование","Тип", "Экзотический"
+         * Проверить наличие в форме полей: "Наименование","Тип", "Экзотический"
          */
         WebElement productAddingForm = driver.findElement(By.xpath("//*[@class=\"modal-content\"]"));
         String productAddingFormText = productAddingForm.getText();
         Assertions.assertTrue(productAddingFormText.contains("Наименование"),"нет поля - Наименование");
         Assertions.assertTrue(productAddingFormText.contains("Тип"),"нет поля - Тип");
-        Assertions.assertTrue(productAddingFormText.contains("Экзотический"),"нет столбца - Экзотический");
+        Assertions.assertTrue(productAddingFormText.contains("Экзотический"),"нет поля - Экзотический");
         addName.click();
-        String value = addName.getCssValue("background-color");
+        
         addName.sendKeys("Кивано");
         addName.sendKeys(Keys.TAB);
         /**
@@ -137,7 +137,7 @@ public class Tests extends BaseClass{
          */
         WebElement addTypeList= driver.findElement(By.xpath("//select[@id=\"type\"]"));
         String addTypeListText=addTypeList.getText();
-        Assertions.assertAll("Выподающий список содержит Овощи и Фрукты",
+        Assertions.assertAll("Выпадающий список содержит Овощи и Фрукты",
                 ()->addTypeListText.equals("Фрукт"),
                 ()->addTypeListText.equals("Овощ"));
 
